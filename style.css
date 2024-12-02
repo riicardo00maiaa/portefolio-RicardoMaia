@@ -1,0 +1,266 @@
+/* Estilo básico do corpo */
+body {
+    font-family: 'Slabo 27px', sans-serif;
+    font-weight: bold;  /* ou use '700' para negrito */
+    font-size: 17px;    /* Definindo o tamanho da fonte */;
+    background: linear-gradient(to bottom, #07960e, #0e9c89);;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    transition: background 0.5s, color 0.5s;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+}
+
+/* Modo escuro */
+body.dark-mode {
+    background: linear-gradient(to right, #333, #666);
+    color: #f2f2f2;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Botão de alternar tema */
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 12px 18px; /* Tamanho mais confortável */
+    cursor: pointer;
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda padrão */
+    border-radius: 25px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+}
+
+/* Efeito ao passar o mouse */
+#theme-toggle:hover {
+    background-color: #45a049; /* Cor de fundo mais escura */
+    transform: scale(1.05); /* Leve aumento de tamanho */
+}
+
+/* Efeito ao clicar */
+#theme-toggle:active {
+    transform: scale(0.95); /* Botão encolhe um pouco ao ser clicado */
+}
+
+/* Imagens com zoom ao passar o mouse */
+img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 200px;       
+    height: 200px;      
+    object-fit: cover;  
+    border-radius: 8px; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(0.7); /* Adiciona escurecimento */
+}
+
+
+/* Elementos principais */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Links na lista de hobbies */
+section ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+section ul li {
+    background-color: #a8b81b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+section ul li:hover {
+    background-color: #7a9d13;
+}
+
+/* Progresso das habilidades */
+#habilidades .progress-bar {
+    background-color: #e0dfdf;
+    width: 100%;
+    height: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1s ease-out;
+}
+
+.skill:hover .progress {
+    transform: scaleY(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.html { width: 80%; background-color: #e44d26; }
+.css { width: 70%; background-color: #264de4; }
+.js { width: 60%; background-color: #f0db4f; }
+
+/* Centralização no footer */
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Links do footer */
+footer a {
+    text-decoration: none;
+    color: #1e271e;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #243024;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    img {
+        width: 100px;  
+        height: 100px; 
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+
+/* Caixas de texto com bordas arredondadas */
+.text-box {
+    background-color: rgba(143, 201, 135, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: justify; /* Justifica o texto */
+    transition: background-color 0.5s;
+    max-width: 600px; /* Limita a largura para maior legibilidade */
+    margin: 20px auto; /* Centraliza horizontalmente */
+}
+
+body.dark-mode .text-box {
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+/* Cabeçalhos dentro das caixas de texto */
+.text-box h1, .text-box h2, .text-box h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Lightbox para imagens */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw; /* Ocupa até 90% da largura da janela */
+    max-height: 90vh; /* Ocupa até 90% da altura da janela */
+    width: auto; /* Ajusta largura proporcionalmente */
+    height: auto; /* Ajusta altura proporcionalmente */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9); /* Sombra ao redor */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s ease-in-out; /* Suaviza animação ao abrir */
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-overlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+/* Container para imagens com título */
+.image-container {
+    position: relative; /* Necessário para posicionar o título */
+    display: inline-block; /* Ajusta para o tamanho da imagem */
+}
+
+.image-container img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(0.7); /* Escurece a imagem */
+}
+
+/* Título sobreposto */
+.image-container .image-title {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0; /* Inicialmente escondido */
+    transition: opacity 0.3s ease-in-out; /* Efeito de aparição suave */
+}
+
+.image-container:hover .image-title {
+    opacity: 1; /* Exibe o título ao passar o cursor */
+}
